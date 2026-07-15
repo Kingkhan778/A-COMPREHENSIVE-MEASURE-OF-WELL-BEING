@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HDI Nexus | Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h2>
+        <span class="logo">◈</span>
+        HDI Nexus
+    </h2>
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        <a href="/predict">Predict</a>
+
+        <a href="/about">About</a>
+
+    </nav>
+
+</header>
+
+
+<div class="result">
+
+    <h2>🤖 AI Prediction Complete</h2>
+
+    <h1>{{ prediction }}</h1>
+
+    <h2>{{ category }}</h2>
+
+    <p>
+
+        The machine learning model has analyzed the supplied socioeconomic
+        indicators and generated the estimated Human Development Index.
+
+    </p>
+
+    <br>
+
+    {% if category == "Very High Human Development" %}
+
+        <div class="card">
+
+            <h2>🌍 Excellent Development</h2>
+
+            <p>
+
+                The country demonstrates outstanding performance across
+                healthcare, education and economic prosperity. This HDI score
+                represents a highly developed nation with strong human
+                development outcomes.
+
+            </p>
+
+        </div>
+
+    {% elif category == "High Human Development" %}
+
+        <div class="card">
+
+            <h2>📈 Strong Development</h2>
+
+            <p>
+
+                The country performs well across most development indicators.
+                Continued investment in education and healthcare can further
+                improve the Human Development Index.
+
+            </p>
+
+        </div>
+
+    {% elif category == "Medium Human Development" %}
+
+        <div class="card">
+
+            <h2>📊 Moderate Development</h2>
+
+            <p>
+
+                The country has moderate human development. Improvements in
+                education quality, healthcare accessibility and income growth
+                would significantly enhance future HDI scores.
+
+            </p>
+
+        </div>
+
+    {% else %}
+
+        <div class="card">
+
+            <h2>⚠️ Development Opportunity</h2>
+
+            <p>
+
+                The prediction indicates lower human development. Greater
+                focus on public health, educational access and economic
+                development can substantially improve long-term HDI.
+
+            </p>
+
+        </div>
+
+    {% endif %}
+
+    <br><br>
+
+    <a href="/predict">
+
+        <button>
+
+            🔄 Run Another Prediction
+
+        </button>
+
+    </a>
+
+</div>
+
+
+<footer>
+
+    <p>
+
+        HDI Nexus • AI Analytics Platform • Machine Learning Prediction Complete
+
+    </p>
+
+</footer>
+
+</body>
+
+</html>
